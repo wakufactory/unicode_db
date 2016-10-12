@@ -6,7 +6,7 @@ r = {}
 a = {} 
 for line in f:
     l = line.split(";")
-    m = re.match('<(.+)(First|Last)>',l[1])
+    m = re.match('<(.+), (First|Last)>',l[1])
     if m :
         if m.group(2) == "First":
             a[m.group(1)] = {'s':l[0],'c':l[2]}

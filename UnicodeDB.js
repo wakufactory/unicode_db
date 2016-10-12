@@ -4,7 +4,7 @@ UnicodeDB =  {
 	load:function() {
 		return new Promise(function(resolve,reject) {
 			var req = new XMLHttpRequest();
-			req.open("get","ud.json",true) ;
+			req.open("get","unidb.json",true) ;
 			req.responseType = "json" ;
 			req.onload = function() {
 				if(req.status==200) {
