@@ -5,14 +5,15 @@
 <meta name="viewport" content="width=device-width">
 <title>絵文字・顔文字デコーダー2</title>
 <script type="text/javascript" src="/js/jquery.js"></script>
-<script type="text/javascript" src="UnicodeDB.js"></script>
+<script type="text/javascript" src="UnicodeNameDB.js"></script>
 <script>
 $(function() {
-	UnicodeDB.load().then( function(resp) {
+	UnicodeNameDB.load().then( function(resp) {
 		console.log(resp) ;
 		$('#cht').on('keyup',function(ev) {
 			var t = this.value ;
-			var sa = UnicodeDB.strip(t) ;
+			var sa = UnicodeNameDB.split(t) ;
+			console.log(sa) ;
 			var s = [] ;
 			for(var i=0;i<sa.length;i++) {
 				s.push("<dt class=ch>&#x"+sa[i][0]+";&nbsp;</dt>"+"<dd><span class=uc>U+"+sa[i][0].toUpperCase()+"</span> "+sa[i][1][0]+" ("+sa[i][1][1]+")</dd>") ;
